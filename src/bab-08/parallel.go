@@ -24,6 +24,33 @@ func writeMail3(wg *sync.WaitGroup) {
 	printTime("Done writing mail #3.")
 	wg.Done()
 }
+func writeMail4(wg *sync.WaitGroup) {
+	time.Sleep(time.Nanosecond * 10)
+	printTime("Done writing mail #4.")
+	wg.Done()
+}
+func writeMail5(wg *sync.WaitGroup) {
+	printTime("Done writing mail #5.")
+	wg.Done()
+}
+func writeMail6(wg *sync.WaitGroup) {
+	printTime("Done writing mail #6.")
+	wg.Done()
+}
+func writeMail7(wg *sync.WaitGroup) {
+	printTime("Done writing mail #7.")
+	wg.Done()
+}
+func writeMail8(wg *sync.WaitGroup) {
+	time.Sleep(time.Nanosecond * 10)
+	printTime("Done writing mail #8.")
+	wg.Done()
+}
+func writeMail9(wg *sync.WaitGroup) {
+	time.Sleep(time.Nanosecond * 10)
+	printTime("Done writing mail #9.")
+	wg.Done()
+}
 
 // Task done in parallel
 func listenForever() {
@@ -34,7 +61,7 @@ func listenForever() {
 
 func main() {
 	var waitGroup sync.WaitGroup
-	waitGroup.Add(3)
+	waitGroup.Add(20)
 
 	go listenForever()
 
@@ -45,6 +72,12 @@ func main() {
 	go writeMail1(&waitGroup)
 	go writeMail2(&waitGroup)
 	go writeMail3(&waitGroup)
+	go writeMail4(&waitGroup)
+	go writeMail5(&waitGroup)
+	go writeMail6(&waitGroup)
+	go writeMail7(&waitGroup)
+	go writeMail8(&waitGroup)
+	go writeMail9(&waitGroup)
 
 	waitGroup.Wait()
 }
