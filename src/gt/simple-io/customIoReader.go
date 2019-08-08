@@ -1,3 +1,11 @@
+/* customReader.go
+
+stream byte value from data source:
+  data source -> io.REader -> trsansfer buffer
+
+customize reader, receiver function is Reader
+*/
+
 package main
 
 import "io"
