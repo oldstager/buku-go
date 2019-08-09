@@ -1,7 +1,7 @@
 /* customReader.go
 
 stream byte value from data source:
-  data source -> io.REader -> trsansfer buffer
+  data source -> io.Reader -> transfer buffer
 
 customize reader, receiver function is Reader
 */
